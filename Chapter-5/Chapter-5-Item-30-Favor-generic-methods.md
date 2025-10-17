@@ -155,8 +155,8 @@ public static <E extends Comparable<E>> E max(Collection<E> c) {
 
     for (E e : c)
         if (result == null || e.compareTo(result) > 0)
+            result = Objects.requireNonNull(e);
 
-    result = Objects.requireNonNull(e);
     return result;
 }
 ```
